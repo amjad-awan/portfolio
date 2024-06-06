@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@import "../styles/variables";
+@import "../styles/_animations";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+  }
+
+  .scrollbar-thumb-gray-dark::-webkit-scrollbar-thumb {
+    background-color: #1a202c;
+  }
+
+  .scrollbar-track-transparent::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+:after, :before {
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--body-bg);
+  font-family: var(--primary-font);
+  position: relative;
+  overflow-x: hidden;
+}
+
+ .slick-slide {
+  padding: 10px 15px;
+}
+.slick-list{
+  overflow: unset !important;
+  overflow-x: hidden !important;
+  // overflow-y: scroll !important;
+  padding-top: 70px !important;
+}
+
+
+
+// .slick-list {
+//   margin-left: -15px;
+//   margin-right: -15px;
+//   pointer-events: none;
+// }
+
+
+.Button {
+  position: relative;
+  color: var(--color-black);
+  background-color: var(--color-primary);
+  border: none;
+  // padding: 20px 40px;
+  font-weight: 500;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.Button:hover {
+  background-color: var(--black3);
+  color: var(--color-white);
+}
+
+.ButtonText {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.ButtonIcon {
+  transition: transform 0.3s ease;
+}
+
+/* Create a pseudo-element for additional animation */
+.Button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -150%;
+  left: -150%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  transform: rotate(45deg);
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: 0;
+}
+
+.Button:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+  opacity: 1;
+}
+
+/* Optional icon movement */
+.Button:hover .ButtonIcon {
+  transform: translateX(5px);
+}
+
+/* Optional text movement */
+.Button:hover .ButtonText {
+  transform: translateX(-5px);
+}

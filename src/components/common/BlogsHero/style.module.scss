@@ -1,0 +1,32 @@
+.__blogs-hero {
+  background: url("../../../../public/assets/images/breadcrumb.jpg");
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  padding: 240px 0 157px;
+  li{
+    position: relative;
+   
+
+      &:not(:last-child)::after,&:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        right: calc(-45px / 2);
+        top: 50%;
+        transform: translate(50%, -50%);
+        border: 2px solid var(--color-primary);
+        border-radius: 50%;
+        z-index: 2;
+    }
+    &:not(:last-child)::before {
+        width: 5px;
+        height: 5px;
+        border: none;
+        z-index: 1;
+        background-color: var(--color-primary);
+    }
+  }
+
+}

@@ -1,0 +1,16 @@
+
+  
+  .custom-cursor {
+    position: fixed;
+    width: 35px;
+    height: 35px;// Temporary background color for visibility
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 10000000;
+    mix-blend-mode: difference;
+    transition: all .3s ease;
+  }
+  
+  

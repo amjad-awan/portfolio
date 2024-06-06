@@ -1,0 +1,53 @@
+.__blog-card {
+
+    img{
+        transition: all .5s linear;
+    }
+    &:hover{
+        img{
+            transform: scale(1.04);
+        }
+    }
+
+
+
+}
+
+
+
+
+.__sec-wrapper{
+    position: relative;
+    overflow: hidden;
+
+    img{
+        transition: all .6s ease-in;    }
+    &:hover{
+        img{
+            transform: scale(1.06);
+        }
+    }
+}
+.__slide{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    // padding: 30px;
+    background: #02050a;
+    overflow: hidden;
+    background: linear-gradient(0deg, #02050a, rgba(2, 5, 10, .58) 61%, rgba(2, 5, 10, 0));
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    z-index: 9;
+
+    h4{
+        text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    }
+}
+

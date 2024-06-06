@@ -1,0 +1,44 @@
+// styles/animations.scss
+
+@keyframes waveUp {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .li-wave {
+    display: flex;
+    
+    & > a {
+      display: flex;
+      position: relative;
+    }
+  
+    & > a > div {
+      display: inline-block;
+      transform: translateY(0);
+      opacity: 1;
+      animation: none;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+  
+    &:hover > a > div {
+      animation-name: waveUp;
+      color: var(--color-primary);
+    
+    }
+  
+    // Use SCSS loops for the animation delay
+    @for $i from 1 through 10 {
+      &:hover > a > div:nth-child(#{$i}) {
+        animation-delay: 0.1s * $i;
+      }
+    }
+  }
+  

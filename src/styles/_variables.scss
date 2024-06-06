@@ -1,0 +1,38 @@
+// styles/_variables.scss
+
+// SCSS Variables
+$color-primary: #55e6a5;
+$bg-color: #09101a;
+$body-bg: #02050a;
+$color-white: #fff;
+$color-black: #02050a;
+$rating-color: #ffba08;
+$body-color: #a2a2a2;
+$black3-color:#141c27;
+$border-color:#191919;
+$gray2-color:#232323;
+$gray3-color:#fff1;
+$gray4-color:#333f4d;
+$gray5-color:#131313;
+// Fonts
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+
+// Set CSS Variables
+:root {
+  --color-primary: #{$color-primary};
+  --bg-color: #{$bg-color};
+  --body-bg: #{$body-bg};
+  --gray2-color:#{$gray2-color};
+  --gray3-color:#{$gray3-color};
+  --gray4-color: #{$gray4-color};
+  --gray5-color:#{$gray5-color};
+  --black3:#{$black3-color};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --rating-color: #{$rating-color};
+  --body-color: #{$body-color};
+--border-color: #{$border-color};
+  --primary-font: #{$primary-font};
+  --secondary-font: #{$secondary-font};
+}

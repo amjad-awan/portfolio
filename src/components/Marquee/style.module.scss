@@ -1,0 +1,25 @@
+.marqueeTg {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--color-primary);
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    li {
+      display: inline-block;
+      -webkit-text-fill-color: transparent !important;
+      -webkit-text-stroke: 1px var(--color-black) !important;
+      font-family: var(--primary) !important;
+      font-size: 120px !important;
+      // font-weight: 900 !important;
+      text-transform: uppercase;
+    //   padding:  20px;
+  
+    }
+  }
+}

@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <div
-      className={` ${styles["banner"]}  gap-[20px] px-[20px] lg:px-[75px] pt-[160px] grid w-[100%] grid:sm-col-1 grid-cols-3`}
+      className={` ${styles["banner"]}  gap-[80px] md:gap-[20px] px-[20px] lg:px-[75px] pt-[160px] grid w-[100%] grid:sm-col-1 grid-cols-3`}
     >
       <div className="col-span-3  md:col-span-2">
         <h1 className="uppercase text-[var(--color-white)] font-[700] text-[60px] leading-[1.2] font-primary">
@@ -32,17 +32,17 @@ const Hero = () => {
           </span>
         </h1>
 
-        <p className="mb-[65px] mt-[25px] font-primary text-[var(--body-color)] leading-[1.7] text-[16px] font-[400]">
+        <p className="mb-[40px]  md:mb-[65px] mt-[25px] font-primary text-[var(--body-color)] leading-[1.7] text-[16px] font-[400]">
           As a skilled full-stack web developer, I seamlessly integrate
           innovative design with cutting-edge technology. My expertise lies in
           crafting robust, scalable applications that deliver exceptional and
           intuitive user experiences.
         </p>
 
-        <div className=" flex-col flex md:flex-row  items-center md:max-w-fit gap-[30px] ">
+        <div className=" flex-col flex md:flex-row  mg:items-center md:max-w-fit gap-[30px] ">
           <CvButton />
 
-          <div className=" cursor-pointer flex justify-center items-center  gap-[20px] ">
+          <div className=" cursor-pointer flex md:justify-center items-center  gap-[20px] ">
             <div className=" cursor-pointer flex justify-center items-center bg-[var(--color-primary)] w-[40px] h-[40px] rounded-full ">
               <FaPlay />
             </div>

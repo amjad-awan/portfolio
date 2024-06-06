@@ -15,7 +15,7 @@ const NavBar = () => {
   const handleDrawerToggle = () => setShowDrawer((prev) => !prev);
   return (
     <>
-      <div className="navbar fixed z-[7777] top-0 right-0 left-0  max-w-[1200px]  mx-auto h-[80px] bg-[var(--black3)] flex justify-between items-center">
+      <div className="navbar fixed z-[7777] top-0 right-0 left-0  max-w-[1200px] w-[100%]  mx-auto h-[80px] bg-[var(--black3)] flex justify-between items-center">
         <div className="logo w-[180px] h-[110px] ">
           <Image
             src={logo}
@@ -104,11 +104,11 @@ const NavBar = () => {
         <div
           className={`${
             showDrawer ? "-z-[999999] " : " inset-0 "
-          } fixed transition-all duration-300 ease-in-out  bg-black opacity-50`}
+          } fixed transition-all duration-500 ease-in-out  bg-black opacity-50`}
         />
 
         <div
-          className={` transition-all duration-1000 ease-in-out ${
+          className={` transition-all duration-500 ease-in-out ${
             showDrawer ? "right-[-100%]" : "right-[0%]"
           } z-[99] h-[100%] fixed  bg-[var(--bg-color)] w-[90%]  md:w-[400px] shadow-lg  `}
           onClick={(e) => e.stopPropagation()}

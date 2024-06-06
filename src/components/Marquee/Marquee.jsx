@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style.module.scss'; // Create a styles module for Marquee
 
-const Marquee = () => {
+const Marquee  = ()  => {
   const items = [
     "* PHP",
     "* Python",

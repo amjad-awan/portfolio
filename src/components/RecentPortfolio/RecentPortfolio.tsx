@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import SectionsHead from "../SectionsHead/SectionsHead";
 import styles from "./styles.module.scss";
 import img from "../../../public/assets/images/discount-shopping-season-with-sale.jpg";
@@ -6,6 +8,8 @@ import img2 from "../../../public/assets/images/dating-app-interface-design_23-2
 import img3 from "../../../public/assets/images/blog.jpg";
 import img4 from "../../../public/assets/images/e-com2.jpg";
 import PortfolioCard from "./PortfolioCard";
+import { getProjects } from "@/services/projects";
+import Loader from "../common/Loader/Loader";
 
 interface PortfolioItem {
   src: { src: string };
@@ -54,8 +58,28 @@ const portfolioItems: PortfolioItem[] = [
   },
 ];
 
-const RecentPortfolio: React.FC = () => (
-  <div id="projects" className="max-w-[1200px] mx-auto mt-[120px] mb-[100px] px-[20px] lg:px-[0px]">
+const RecentPortfolio: React.FC = () => {
+const [ portfolio, setPortfolio]= useState([])
+const [isLoading, setIsLoading]= useState(true)
+
+const getPortfolio=async ()=>{
+  try {
+   const res= await getProjects(6) 
+   if(res && res.data){
+    setPortfolio(res.data)
+   }
+  } catch (error) {
+    
+  }finally{
+    setIsLoading(false)
+  }
+}
+
+useEffect(()=>{
+  getPortfolio()
+},[])
+
+  return <div id="projects" className="max-w-[1200px] mx-auto mt-[120px] mb-[100px] px-[20px] lg:px-[0px]">
     <div className="max-w-[1080px] pb-[30px] mb-[20px]">
       <SectionsHead
         lablePosition="left"
@@ -65,10 +89,10 @@ const RecentPortfolio: React.FC = () => (
       />
     </div>
 
-
+    {isLoading && <div className="my-[80px]"><Loader/></div> }
 
     <div className="lg:px-[0px] gap-[15px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-      {portfolioItems.map((item, idx) => (
+      {portfolio?.map((item, idx) => (
         <PortfolioCard key={idx} {...item} cardHeight="550" />
       ))}
     </div>
@@ -81,6 +105,6 @@ const RecentPortfolio: React.FC = () => (
           More Projects +
         </button>
   </div>
-);
+}
 
 export default RecentPortfolio;

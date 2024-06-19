@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import AnimatedItem from "../common/AnimatedItem/AnimatedItem";
 import SectionsHead from "../SectionsHead/SectionsHead";
 import Link from "next/link";
@@ -7,7 +9,37 @@ import img from "../../../public/assets/images/blog1.jpg";
 import { FaCircleUser } from "react-icons/fa6";
 import { FaComments } from "react-icons/fa";
 import styles from "./style.module.scss";
-const MyBlogs = ({ button }:any) => {
+import { getBlogs } from "@/services/blogs";
+import Loader from "../common/Loader/Loader";
+import { convertToPic } from "@/helpers/picture";
+import DateFormatter from "@/helpers/dateFormatter";
+interface BlogProps {
+  _id: string;
+  photoId: string;
+  createdAt: string;
+  title: string;
+  comments: Array<any>;
+}
+const MyBlogs = ({ button }: any) => {
+  const [blogs, setBlogs] = useState<BlogProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const allBlogs = async () => {
+    try {
+      const res = await getBlogs();
+      if (res && res.data) {
+        setBlogs(res.data);
+      }
+    } catch (error) {
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    allBlogs();
+  }, []);
+
   return (
     <div className="max-w-[1200px] mb-[200px] pt-[120px] px-[20px] lg:px-[0px] mx-auto ">
       <div className="flex gap-[40px] flex-col md:flex-row items-end ">
@@ -29,274 +61,58 @@ const MyBlogs = ({ button }:any) => {
           </button>
         )}
       </div>
+
+      {isLoading && (
+        <div className="my-[80px]">
+          <Loader />
+        </div>
+      )}
+
       <div className="grid grid-cols-1 gap-y-[130px] gap-x-[20px]  md:grid-cols-2 lg:grid-cols-3 mt-[20px] md:mt-[40px] ">
-        <AnimatedItem
-          el="div"
-          cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
-        >
-          <Link href={`blog/1`} className="h-[300px] w-[100%]">
-            <>
-              <div className="h-[100%] w-[100%] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt="blog1"
-                  className="w-[100%] h-[100%] object-cover "
-                />
-              </div>
+        {blogs.map((blog) => {
+          return (
+            <AnimatedItem
+              el="div"
+              cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
+            >
+              <Link href={`blog/${blog._id}`} className="h-[300px] w-[100%]">
+                <>
+                  <div className="h-[100%] w-[100%] overflow-hidden">
+                    <img
+                      src={convertToPic(blog.photoId)}
+                      alt={blog.title}
+                      className="w-[100%] h-[100%] object-cover "
+                    />
+                  </div>
 
-              <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
-                <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
-                  31 December,2022
-                </div>
+                  <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
+                    <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
+                      {/* 31 December,2022 */}
+                      {DateFormatter(blog?.createdAt)}
+                      {/* {blog.createdAt} */}
+                    </div>
 
-                <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaCircleUser className="text-[var(--color-primary)]" />
-                    By admin
-                  </li>
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaComments className="text-[var(--color-primary)]" />
-                    Comments (05)
-                  </li>
-                </ul>
+                    <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
+                      <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
+                        <FaCircleUser className="text-[var(--color-primary)]" />
+                        By admin
+                      </li>
+                      <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
+                        <FaComments className="text-[var(--color-primary)]" />
+                        Comments ({blog.comments.length})
+                      </li>
+                    </ul>
 
-                <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
-                  {" "}
-                  The standard personal My portfolio
-                </h6>
-              </div>
-            </>
-          </Link>
-        </AnimatedItem>
-        <AnimatedItem
-          el="div"
-          cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
-        >
-          <Link href={`blog/1`} className="h-[300px] w-[100%]">
-            <>
-              <div className="h-[100%] w-[100%] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt="blog1"
-                  className="w-[100%] h-[100%] object-cover "
-                />
-              </div>
-
-              <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
-                <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
-                  31 December,2022
-                </div>
-
-                <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaCircleUser className="text-[var(--color-primary)]" />
-                    By admin
-                  </li>
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaComments className="text-[var(--color-primary)]" />
-                    Comments (05)
-                  </li>
-                </ul>
-
-                <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
-                  {" "}
-                  The standard personal My portfolio
-                </h6>
-              </div>
-            </>
-          </Link>
-        </AnimatedItem>
-        <AnimatedItem
-          el="div"
-          cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
-        >
-          <Link href={`blog/1`} className="h-[300px] w-[100%]">
-            <>
-              <div className="h-[100%] w-[100%] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt="blog1"
-                  className="w-[100%] h-[100%] object-cover "
-                />
-              </div>
-
-              <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
-                <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
-                  31 December,2022
-                </div>
-
-                <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaCircleUser className="text-[var(--color-primary)]" />
-                    By admin
-                  </li>
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaComments className="text-[var(--color-primary)]" />
-                    Comments (05)
-                  </li>
-                </ul>
-
-                <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
-                  {" "}
-                  The standard personal My portfolio
-                </h6>
-              </div>
-            </>
-          </Link>
-        </AnimatedItem>
-        <AnimatedItem
-          el="div"
-          cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
-        >
-          <Link href={`blog/1`} className="h-[300px] w-[100%]">
-            <>
-              <div className="h-[100%] w-[100%] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt="blog1"
-                  className="w-[100%] h-[100%] object-cover "
-                />
-              </div>
-
-              <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
-                <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
-                  31 December,2022
-                </div>
-
-                <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaCircleUser className="text-[var(--color-primary)]" />
-                    By admin
-                  </li>
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaComments className="text-[var(--color-primary)]" />
-                    Comments (05)
-                  </li>
-                </ul>
-
-                <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
-                  {" "}
-                  The standard personal My portfolio
-                </h6>
-              </div>
-            </>
-          </Link>
-        </AnimatedItem>
-        <AnimatedItem
-          el="div"
-          cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
-        >
-          <Link href={`blog/1`} className="h-[300px] w-[100%]">
-            <>
-              <div className="h-[100%] w-[100%] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt="blog1"
-                  className="w-[100%] h-[100%] object-cover "
-                />
-              </div>
-
-              <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
-                <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
-                  31 December,2022
-                </div>
-
-                <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaCircleUser className="text-[var(--color-primary)]" />
-                    By admin
-                  </li>
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaComments className="text-[var(--color-primary)]" />
-                    Comments (05)
-                  </li>
-                </ul>
-
-                <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
-                  {" "}
-                  The standard personal My portfolio
-                </h6>
-              </div>
-            </>
-          </Link>
-        </AnimatedItem>
-        <AnimatedItem
-          el="div"
-          cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
-        >
-          <Link href={`blog/1`} className="h-[300px] w-[100%]">
-            <>
-              <div className="h-[100%] w-[100%] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt="blog1"
-                  className="w-[100%] h-[100%] object-cover "
-                />
-              </div>
-
-              <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
-                <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
-                  31 December,2022
-                </div>
-
-                <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaCircleUser className="text-[var(--color-primary)]" />
-                    By admin
-                  </li>
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaComments className="text-[var(--color-primary)]" />
-                    Comments (05)
-                  </li>
-                </ul>
-
-                <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
-                  {" "}
-                  The standard personal My portfolio
-                </h6>
-              </div>
-            </>
-          </Link>
-        </AnimatedItem>
-        <AnimatedItem
-          el="div"
-          cls={`${styles["__blog-card"]} w-[100%] h-[380px] md:mt-[5px] bg-[var(--body-color)]`}
-        >
-          <Link href={`blog/1`} className="h-[300px] w-[100%]">
-            <>
-              <div className="h-[100%] w-[100%] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt="blog1"
-                  className="w-[100%] h-[100%] object-cover "
-                />
-              </div>
-
-              <div className="relative w-[90%] left-[50%] translate-x-[-50%]  z-[999] top-[-76px]  bg-[var(--bg-color)] p-[30px] ">
-                <div className=" text-center absolute left-[50%] translate-x-[-50%] inline-block top-[-15px] text-[var(--color-white)] text-[16px] font-[500] bg-[var(--color-primary)] w-[200px] px-[17px] py-[13px] ">
-                  31 December,2022
-                </div>
-
-                <ul className=" mt-[15px] mb-[10px] flex justify-between gap-[20px] ">
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaCircleUser className="text-[var(--color-primary)]" />
-                    By admin
-                  </li>
-                  <li className="flex text-[.9rem] font-primary text-[var(--color-white)] items-center gap-[10px] ">
-                    <FaComments className="text-[var(--color-primary)]" />
-                    Comments (05)
-                  </li>
-                </ul>
-
-                <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
-                  {" "}
-                  The standard personal My portfolio
-                </h6>
-              </div>
-            </>
-          </Link>
-        </AnimatedItem>
-
+                    <h6 className="text-[20px] mt-[5px] transition-all duration-500 text-center font-[600] font-primary block text-[var(--color-white)] hover:text-[var(--color-primary)] ">
+                      {" "}
+                      {blog.title}
+                    </h6>
+                  </div>
+                </>
+              </Link>
+            </AnimatedItem>
+          );
+        })}
       </div>
     </div>
   );

@@ -8,11 +8,11 @@ const NewsLetter = () => {
     <div className={`${styles["__news-letter"]}`}>
       <AnimatedItem
         el="h3"
-        cls=" transition-all duration-500 opacity-0 translate-y-[20px] z-[99] text-[40px] font-[900] uppercase text-center text-[var(--color-white)] "
+        cls=" transition-all duration-500 z-[5] opacity-0 translate-y-[20px] text-[40px] font-[900] uppercase text-center text-[var(--color-white)] "
       >
         <>SUBSCRIBE MY NEWSLETTER</>
       </AnimatedItem>
-      <div className=" flex mt-[30px] gap-[20px ] items-center border-[1px] bg-[var(--gray5-color)] w-[550px] max-w-[95%] z-[99] p-[10px] border-[var(--color-primary)]">
+      <div className=" flex mt-[30px] gap-[20px ] items-center border-[1px] bg-[var(--gray5-color)] w-[550px] max-w-[95%] z-[2] p-[10px] border-[var(--color-primary)]">
 <input placeholder="Enter Your Email" className="flex-1 pl-[15px] text-[var(--color-white)] text-[16px] font-primary py-[15px] bg-transparent outline-none border-none h-[100%]" />
 <button
           type="button"

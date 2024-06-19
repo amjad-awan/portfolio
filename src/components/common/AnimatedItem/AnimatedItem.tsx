@@ -6,7 +6,6 @@ import React, {
   useRef,
   ReactNode,
   ElementType,
-  Component,
 } from "react";
 import styles from "./style.module.scss";
 

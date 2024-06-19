@@ -1,9 +1,9 @@
 import Blog from '@/pages/Blog/Blog'
 import React from 'react'
 
-const index = () => {
+const index = ({ params }: { params: { id: string } }) => {
   return (
-    <Blog/>
+    <Blog params={params}/>
   )
 }
 

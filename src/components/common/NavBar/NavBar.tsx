@@ -15,7 +15,7 @@ const NavBar = () => {
   const handleDrawerToggle = () => setShowDrawer((prev) => !prev);
   return (
     <>
-      <div className="navbar fixed z-[7777] top-0 right-0 left-0  max-w-[1200px] w-[100%]  mx-auto h-[80px] bg-[var(--black3)] flex justify-between items-center">
+      <div className="navbar fixed z-[7] top-0 right-0 left-0  max-w-[1200px] w-[100%]  mx-auto h-[80px] bg-[var(--black3)] flex justify-between items-center">
         <div className="logo w-[180px] h-[110px] ">
           <Image
             src={logo}
@@ -93,17 +93,16 @@ const NavBar = () => {
           <HiOutlineBars3CenterLeft />
         </div>
       </div>
-
       <div
         className={` ${
-          showDrawer ? "-z-[1] left-[100%] " : "z-[9999999]  inset-0  "
+          showDrawer ? "-z-[1] left-[100%] " : "z-[99]  inset-0  "
         } fixed  flex`}
         onClick={handleDrawerToggle}
       >
      
         <div
           className={`${
-            showDrawer ? "-z-[999999] " : " inset-0 "
+            showDrawer ? "-z-[99] " : " inset-0 "
           } fixed transition-all duration-500 ease-in-out  bg-black opacity-50`}
         />
 

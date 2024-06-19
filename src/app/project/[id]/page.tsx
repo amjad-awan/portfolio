@@ -1,12 +1,11 @@
 import ProjectDetail from '@/pages/ProjectDetail/ProjectDetail'
 import React from 'react'
 
-const page = () => {
+export default function Page({ params }: { params: { id: string } }) {
   return (
     <>
-     <ProjectDetail/>
+     <ProjectDetail params={params} />
     </>
   )
 }
 
-export default page

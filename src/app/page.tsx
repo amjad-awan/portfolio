@@ -8,10 +8,25 @@ import dynamic from "next/dynamic";
 import Marquee from "@/components/Marquee/Marquee";
 import MyBlogs from "@/components/MyBlogs/MyBlogs";
 import NewsLetter from "@/components/NewsLetter/NewsLetter";
+import { getProjects } from "@/services/projects";
 const Carousel = dynamic(() => import("@/components/Carousel/Carousel"), {
   ssr: false,
 });
-export default function Home() {
+
+
+export default function  Home() {
+
+//   let projects=[]
+//   try {
+//     const res = await getProjects(2);
+//     console.log("res",res)
+//     projects=res||[]
+//   } catch (error) {
+//     console.error("Error fetching projects:", error);
+//   }
+
+// console.log("projects",projects)
+
   return (
     <main className=" min-h-screen ">
       <Hero />
@@ -19,10 +34,10 @@ export default function Home() {
       <AboutMe />
       <GetInTouch />
       <EducationAndSkills />
-      <RecentPortfolio />
+      <RecentPortfolio  />
       <Carousel />
       <Marquee />
-      <MyBlogs button={true}/>
+      <MyBlogs button={true} />
    
     </main>
   );

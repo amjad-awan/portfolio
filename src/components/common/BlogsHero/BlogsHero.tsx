@@ -13,7 +13,7 @@ const BlogsHero = ({heading, label}:any) => {
         </h1>
         <ul  className="flex flex-wrap gap-[50px]">
           <li className="text-[20px] transition-all duration-500 hover:text-[var(--color-primary)] font-primary  font-[600] text-[var(--color-white)]">
-            <Link href="">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li className="text-[20px] transition-all duration-500 hover:text-[var(--color-primary)] font-primary  font-[600] text-[var(--color-white)]">
             <Link href="">{label}</Link>

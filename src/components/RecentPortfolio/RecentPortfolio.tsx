@@ -90,9 +90,8 @@ useEffect(()=>{
     </div>
 
     {isLoading && <div className="my-[80px]"><Loader/></div> }
-
     <div className="lg:px-[0px] gap-[15px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-      {portfolio?.map((item, idx) => (
+      {portfolio?.map((item:any, idx:any) => (
         <PortfolioCard key={idx} {...item} cardHeight="550" />
       ))}
     </div>

@@ -10,6 +10,7 @@ interface PortfolioCardProps {
   title: string;
   description: string;
   cardHeight:string;
+  cardSpan:string,
   _id:string
   }
 

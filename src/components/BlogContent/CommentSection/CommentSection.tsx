@@ -45,7 +45,7 @@ const formFields: FormField[] = [
 ];
 
 const CommentSection = ({ blogId, setBlog, setFormData, formData }: any) => {
-  const emojiPickerRef = useRef(null);
+  const emojiPickerRef = useRef<any>(null);
 
   const [showReply, setShoReply] = useState(false);
   const [picImojie, setPicImojie] = useState(false);

@@ -18,7 +18,7 @@ const Reply = ({ blogId, replies, commentId, setBlog }: any) => {
   const [showReply, setShoReply] = useState(false);
   const [picImojie, setPicImojie] = useState(false);
   const [value, setValue] = useState("");
-  const emojiPickerRef = useRef(null);
+  const emojiPickerRef = useRef<any>(null);
   const [replyData, setReplyData] = useState<FormType>({
     username: "amjad@gmail.com",
     // phone: "",

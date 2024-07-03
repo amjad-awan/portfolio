@@ -17,18 +17,23 @@ const AuthProvider = ({ children }) => {
   console.log("user14", user)
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false);
-    });
+    const isUser= JSON.parse(localStorage.getItem("user"))
+    if(isUser){
+      setUser(isUser);
+    }
+    // const unsubscribe = onAuthStateChanged(auth, (user) => {
+    //   setUser(user);
+    //   setLoading(false);
+    // });
 
-    return () => unsubscribe();
+    // return () => unsubscribe();
   }, []);
 
   const login = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         setUser(result.user);
+        localStorage.setItem("user", JSON.stringify(result.user))
         setShowModal(false)
 
       })
@@ -38,9 +43,9 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    signOut(auth)
-      .then(() => {
+    signOut(auth).then(() => {
         setUser(null);
+        localStorage.removeItem("user")
         setShowModal(false)
       })
       .catch((error) => {

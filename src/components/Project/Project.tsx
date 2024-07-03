@@ -8,6 +8,9 @@ import { useRouter } from "next/navigation";
 import { getProject } from "@/services/projects";
 import Loader from "../common/Loader/Loader";
 import { convertToPic } from "@/helpers/picture";
+import { FaArrowRight } from "react-icons/fa6";
+
+import styles from "./style.module.scss"
 interface ProjectType {
   id: string;
   title: string;
@@ -15,13 +18,14 @@ interface ProjectType {
   photoId: string;
   videoId: string;
   type: string;
+  link: string;
   techStack: string[];
 }
 const Project = ({ params }: { params: { id: string } }) => {
   const { id } = params;
 
   const [project, setProject] = useState<ProjectType | null>(null);
-const [isLoading, setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   const addLineBreaks = (text: any, wordsPerLine: any) => {
     const words = text?.split(" ");
     let result = [];
@@ -37,11 +41,10 @@ const [isLoading, setIsLoading]= useState(true)
       if (res && res.data) {
         setProject(res.data);
       }
-      setIsLoading(false)
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
-      setIsLoading(false)
-
+      setIsLoading(false);
     }
   };
 
@@ -49,10 +52,14 @@ const [isLoading, setIsLoading]= useState(true)
     getSingleProject();
   }, [id]);
 
-
   const paragraphs = addLineBreaks(project?.description, 55);
 
-  if(isLoading) return <div className="mt-[80px]"><Loader/></div> 
+  if (isLoading)
+    return (
+      <div className="mt-[80px]">
+        <Loader />
+      </div>
+    );
   return (
     <div className="max-w-[1200px] mx-auto">
       {/* <div className="max-w-[1080px] pb-[30px] mb-[20px]">
@@ -71,7 +78,7 @@ const [isLoading, setIsLoading]= useState(true)
               className=" object-cover w-[100%] h-[100%] "
             />
           </div>
-          <div className="flex items-center gap-[30px] mt-[40px]">
+          <div className="flex items-center gap-[30px] justify-between mt-[40px]">
             {/* <h3 className="text-[16px] font-[600] font-primary text-[var(--color-white)]">
               Type:
             </h3> */}
@@ -92,8 +99,6 @@ const [isLoading, setIsLoading]= useState(true)
               description
             </span>
           </div>
-
-        
 
           <div>
             <p className="text-[var(--body-color)] text-justify font-primary font-[400] text-[16px] mt-[32px]">
@@ -143,6 +148,13 @@ const [isLoading, setIsLoading]= useState(true)
               {/* <source src={`http://localhost:3000/${video.filePath}`} type="video/mp4" /> */}
             </video>
           </div>
+          <a
+            href={project?.link}
+            target="_blank"
+            className={` ${styles["project-link"]} mt-[20px] text-[30px] flex justify-center p-[10px] text-center border-[2px] border-[var(--color-primary)] w-[100%] cursor-pointer text-[var(--color-primary)]`}
+          >
+            <FaArrowRight />
+          </a>
         </div>
       </div>
 

@@ -12,6 +12,8 @@ import { useAuth } from "@/context/authContext";
 const Layout = ({ children }) => {
   const { login, user,setShowModal } = useAuth();
 
+  console.log("user",user)
+
   return (
     <div className="relative">
       <CustomCursor />

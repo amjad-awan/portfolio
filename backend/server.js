@@ -7,7 +7,6 @@ import photoRoute from "./routes/photoRoutes.js";
 import projectRoute from "./routes/projectRoutes.js";
 import videoRoute from "./routes/videoRoutes.js";
 import blogRoutes from './routes/blogRoutes.js';
-
 import path from 'path';
 import { fileURLToPath } from 'url';
 import connectDB from "./db.js";
@@ -16,9 +15,7 @@ dotenv.config();
 connectDB();
 // Initialize Express app
 const app = express();
-
 // Set up middleware
-
 app.use(cors())
 app.use(express.json());
 app.use(bodyParser.urlencoded({imit: '50000000', extended: true}));

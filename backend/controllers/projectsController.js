@@ -2,7 +2,7 @@ import projectModel from "../models/projectModel.js";
 
 export const addProject = async (req, res) => {
   try {
-    const { title, type, description,cardSpan, techStack,videoId, photoId, feature } = req.body;
+    const { title, type, link, description,cardSpan, techStack,videoId, photoId, feature } = req.body;
 
     const newPorject = new projectModel({
       title,
@@ -12,8 +12,10 @@ export const addProject = async (req, res) => {
       feature,
       photoId,
       cardSpan,
+      link,
       videoId
     });
+
     const savedProject = await newPorject.save();
     res.status(201).json({
       success: true,

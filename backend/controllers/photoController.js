@@ -56,4 +56,5 @@ export const getPhotoController = async (req, res) => {
       error: "this error" + error,
     });
   }
+  
 };

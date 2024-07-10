@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://portfolio-mu-taupe-40.vercel.app/api/v1'
+const BASE_URL = 'https://portfolio-backend-rouge-ten.vercel.app/api/v1'
 
 
 export const sendRequest = async (payload:any) => {

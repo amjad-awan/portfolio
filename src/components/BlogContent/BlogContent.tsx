@@ -25,7 +25,7 @@ interface FormType {
   username: string;
   email: string;
 }
-const BlogContent = ({ params }: { params: { id: string } }) => {
+const BlogContent = ({ params }: { params: { id: string | undefined } }) => {
 
   const [formData, setFormData] = useState<FormType>({
     username: "",

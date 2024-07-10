@@ -8,7 +8,7 @@ export const getBlogs =async()=>{
       return res;
 }
 
-export const getBlog =async(id:string)=>{
+export const getBlog =async(id:string | undefined)=>{
 
     const res = await sendRequest({
         endpoint:`blog/get-blog/${id}`,

@@ -12,7 +12,7 @@ const Card: React.FC<PortfolioCardProps> = ({src,title,description,span, cardHei
     <div className={`${styles["__sec-wrapper"]} ${span && span} h-[${cardHeight}px]`}>
       <a href="#">
         <img src={src.src} className="h-[100%] w-[100%] object-cover" alt={title} />
-        <div className={`${styles["__slide"]} flex flex-col px-[20px] py-[20px] gap-[10px]`}>
+        <div className={`${styles["__slide"]} z-[1] flex flex-col px-[20px] py-[20px] gap-[10px]`}>
           <h4 className="text-[#fff]">{title}</h4>
           <div className="flex items-center gap-[20px]">
             <div className="bg-[var(--color-primary)] h-[1px] w-[50px]"></div>

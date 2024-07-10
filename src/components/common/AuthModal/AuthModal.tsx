@@ -9,9 +9,9 @@ const AuthModal = () => {
       {" "}
       <div onClick={()=>setShowModal(false)} className={`inset-0 top-[80px] fixed ${showModal?"z-[12]":"-z-[12]"} bg-[#000000b9]`}> </div>
       <div
-        className={` z-[999999] overflow-hidden rounded-md w-[300px] transition-all duration-500 fixed   top-[${
-          showModal ? "50%" : "-25px" 
-        }] left-[50%] translate-x-[-50%] translate-y-[-50%]`}
+        className={` z-[999999] overflow-hidden rounded-md w-[300px] transition-all duration-500 fixed  ${
+          showModal?"top-[50%]":"top-[-80px]" 
+        }   left-[50%] translate-x-[-50%] translate-y-[-50%]`}
       >
         <div className="p-[10px] font-primary text-[var(--body-bg)] text-center text-[18px] font-[600] bg-[var(--color-primary)]">
           {user ? "Logout" : "Login"}

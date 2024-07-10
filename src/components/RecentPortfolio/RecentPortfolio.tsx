@@ -10,6 +10,7 @@ import img4 from "../../../public/assets/images/e-com2.jpg";
 import PortfolioCard from "./PortfolioCard";
 import { getProjects } from "@/services/projects";
 import Loader from "../common/Loader/Loader";
+import Link from "next/link";
 
 interface PortfolioItem {
   src: { src: string };
@@ -96,13 +97,16 @@ useEffect(()=>{
         <PortfolioCard key={idx} {...item} cardHeight="550" />
       ))}
     </div>
-
+    <Link href="/projects" >
     <button
           type="button"
           className=" mt-[30px]  md:ml-auto Button w-[200px] transition-all duration-300 hover:bg-[--black3] hover:text-[var(--color-white)] text-[14px] inline-flex  text-[var(--color-black)] px-[20px] font-[600] py-[15px]  bg-[var(--color-primary)]"
         >
+         
           More Projects +
         </button>
+        </Link>
+
   </div>
 }
 

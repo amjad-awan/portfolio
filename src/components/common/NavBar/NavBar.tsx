@@ -8,11 +8,24 @@ import logo from "../../../../public/assets/images/logo2.svg";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 import FormWrapper from "../FormWrapper/FormWrapper";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
+  const pathName = usePathname();
+  console.log("pathName", pathName);
+
   const [showDrawer, setShowDrawer] = useState(true);
 
   const handleDrawerToggle = () => setShowDrawer((prev) => !prev);
+  const routes = {
+    home: "/",
+    about: pathName === "/" ? "/#about" : "/about",
+    projects: pathName === "/" ? "/#projects" : "/projects",
+    services: pathName === "/" ? "/#services" : "/services",
+    contact: pathName === "/" ? "/#contact" : "/contact",
+    blogs: pathName === "/" ? "/#blogs" : "/blogs",
+  };
+
   return (
     <>
       <div className="navbar fixed z-[7] top-0 right-0 left-0  max-w-[1200px] w-[100%]  mx-auto h-[80px] bg-[var(--black3)] flex justify-between items-center">
@@ -25,7 +38,7 @@ const NavBar = () => {
         </div>
         <ul className="list-none hidden md:flex gap-[30px]">
           <li className="uppercase font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave">
-            <Link href="/" className="px-[10px] flex">
+            <Link href={routes.home} className="px-[10px] flex">
               <div>H</div>
               <div>O</div>
               <div>M</div>
@@ -33,7 +46,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="uppercase font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave">
-            <Link href="/" className="px-[10px] flex">
+            <Link href={routes.about} className="px-[10px] flex">
               <div>A</div>
               <div>B</div>
               <div>O</div>
@@ -42,7 +55,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="uppercase font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave">
-            <Link href="/" className="px-[10px] flex">
+            <Link href={routes.services} className="px-[10px] flex">
               <div>S</div>
               <div>E</div>
               <div>R</div>
@@ -54,7 +67,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="uppercase font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave">
-            <Link href="#projects" className="px-[10px] flex">
+            <Link href={routes.projects} className="px-[10px] flex">
               <div>P</div>
               <div>R</div>
               <div>O</div>
@@ -66,7 +79,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="uppercase font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave">
-            <Link href="/" className="px-[10px] flex">
+            <Link href={routes.contact} className="px-[10px] flex">
               <div>C</div>
               <div>O</div>
               <div>N</div>
@@ -77,7 +90,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="uppercase font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave">
-            <Link href="/blogs" className="px-[10px] flex">
+            <Link href={routes.blogs} className="px-[10px] flex">
               <div>B</div>
               <div>L</div>
               <div>O</div>
@@ -99,7 +112,6 @@ const NavBar = () => {
         } fixed  flex`}
         onClick={handleDrawerToggle}
       >
-     
         <div
           className={`${
             showDrawer ? "-z-[99] " : " inset-0 "
@@ -126,7 +138,7 @@ const NavBar = () => {
 
           <ul className="list-none px-[30px] py-[20px] md:hidden flex flex-col">
             <li className="uppercase border-b-[1px] py-[15px] border-[#f5f4f41a] font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave  ">
-              <Link href="/" className=" flex">
+              <Link href={routes.home} className=" flex">
                 <div>H</div>
                 <div>O</div>
                 <div>M</div>
@@ -134,7 +146,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="uppercase border-b-[1px] py-[15px] border-[#f5f4f41a] font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave  ">
-              <Link href="/" className=" flex">
+              <Link href={routes.about} className=" flex">
                 <div>A</div>
                 <div>B</div>
                 <div>O</div>
@@ -143,7 +155,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="uppercase border-b-[1px] py-[15px] border-[#f5f4f41a] font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave  ">
-              <Link href="/" className=" flex">
+              <Link href={routes.services} className=" flex">
                 <div>S</div>
                 <div>E</div>
                 <div>R</div>
@@ -155,7 +167,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="uppercase border-b-[1px] py-[15px] border-[#f5f4f41a] font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave  ">
-              <Link href="#projects" className=" flex">
+              <Link href={routes.projects} className=" flex">
                 <div>P</div>
                 <div>R</div>
                 <div>O</div>
@@ -167,7 +179,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="uppercase border-b-[1px] py-[15px] border-[#f5f4f41a] font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave  ">
-              <Link href="/" className=" flex">
+              <Link href={routes.contact} className=" flex">
                 <div>C</div>
                 <div>O</div>
                 <div>N</div>
@@ -178,7 +190,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="uppercase border-b-[1px] py-[15px] border-[#f5f4f41a] font-primary font-[600] text-[14px] text-[var(--color-white)] li-wave  ">
-              <Link href="/blogs" className=" flex">
+              <Link href={routes.blogs} className=" flex">
                 <div>B</div>
                 <div>L</div>
                 <div>O</div>

@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
   return (
     <div className="relative">
       <CustomCursor />
+      
       <NavBar />
       {children}
       <NewsLetter />
@@ -27,7 +28,7 @@ const Layout = ({ children }) => {
         className=" cursor-pointer bg-[var(--body-bg)] text-[var(--color-primary)] flex justify-center items-center rounded-full h-[40px] z-[9] w-[40px] fixed top-[20px] right-[100px] md:right-[10px] "
       >
         {user ? (
-          user.displayName.charAt(0)
+          user.displayName?.charAt(0)
         ) : (
           <FaCircleUser className="leading-[50px] text-[40px] text-[var(--color-primary)] " />
         )}

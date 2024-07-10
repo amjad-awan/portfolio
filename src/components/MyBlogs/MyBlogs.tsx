@@ -41,7 +41,7 @@ const MyBlogs = ({ button }: any) => {
   }, []);
 
   return (
-    <div className="max-w-[1200px] mb-[200px] pt-[120px] px-[20px] lg:px-[0px] mx-auto ">
+    <div id="blogs" className="max-w-[1200px] mb-[200px] pt-[120px] px-[20px] lg:px-[0px] mx-auto ">
       <div className="flex gap-[40px] flex-col md:flex-row items-end ">
         <div className="max-w-[800px]">
           <SectionsHead

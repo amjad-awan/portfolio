@@ -86,7 +86,7 @@ const Footer = () => {
       </div>
       <div className="px-[20px] md:px-[0px] flex  flex-col md:flex-row justify-between items-start md:items-center max-w-[1200px] py-[30px] gap-[20px] mt-[70px] mx-auto border-t-[1px] border-[#fff1]">
         <p className="text-[16px] font-primary font-[400] leading-[1.7] opacity-[.5] text-[var(--body-color)] ">
-          © Amjad's sol 2024 | All Rights Reserved
+          ©amjad Mehmood 2024 | All Rights Reserved
         </p>
         <ul className="flex gap-[20px] ">
           <li className="text-[var(--body-color)]  opacity-[.5] transition-all hover:opacity-[1]  duration-500 hover:text-[var(--color-primary)] ">

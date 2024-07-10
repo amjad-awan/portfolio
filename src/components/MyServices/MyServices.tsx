@@ -142,7 +142,7 @@ const cards = [
 
 const MyServices = () => {
   return (
-    <div className="py-[130px]">
+    <div className="py-[130px]" id="services" >
       <div className="max-w-[700px] mx-auto">
         <SectionsHead
           lablePosition="center"

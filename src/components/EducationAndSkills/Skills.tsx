@@ -13,8 +13,8 @@ const skillData = [
   { name: 'NodeJS', width: '90%' },
   { name: 'ExpressJs', width: '95%' },
   { name: 'NestJS', width: '90%' },
-  { name: 'mongodb', width: '98%' },
-  { name: 'posgesql', width: '98%' },
+  { name: 'Mongodb', width: '98%' },
+  { name: 'PostgreSQL', width: '98%' },
 ];
 
 const Skills: React.FC = () => {

@@ -24,7 +24,7 @@ const AboutMe = () => {
     };
   }, [cardRef]);
   return (
-    <div className="max-w-[1200px] mb-[100px] px-[20px] lg:px-[0px] gap-[50px] mx-auto grid  grid-cols-1 md:grid-cols-2 ">
+    <div id="about" className="max-w-[1200px] mb-[100px] px-[20px] lg:px-[0px] gap-[50px] mx-auto grid  grid-cols-1 md:grid-cols-2 ">
       <div className="flex flex-col ">
         <SectionsHead
           lablePosition="left"

@@ -9,8 +9,8 @@ import { getProject } from "@/services/projects";
 import Loader from "../common/Loader/Loader";
 import { convertToPic } from "@/helpers/picture";
 import { FaArrowRight } from "react-icons/fa6";
-
-import styles from "./style.module.scss"
+import Video from "./video";
+import styles from "./style.module.scss";
 interface ProjectType {
   id: string;
   title: string;
@@ -20,6 +20,7 @@ interface ProjectType {
   type: string;
   link: string;
   techStack: string[];
+  feature: string[];
 }
 const Project = ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -78,6 +79,11 @@ const Project = ({ params }: { params: { id: string } }) => {
               className=" object-cover w-[100%] h-[100%] "
             />
           </div>
+
+          <div className="lg:hidden">
+            <Video videoId={project?.videoId} link={project?.link} />
+          </div>
+
           <div className="flex items-center gap-[30px] justify-between mt-[40px]">
             {/* <h3 className="text-[16px] font-[600] font-primary text-[var(--color-white)]">
               Type:
@@ -137,15 +143,44 @@ const Project = ({ params }: { params: { id: string } }) => {
                 ))}{" "}
             {/* <span className="text-[var(--body-color)] uppercase text-[12px]"> Reactjs </span> */}
           </ul>
+
+          <div className="bg-[var(--color-primary)]  relative mt-[50px] h-[1px] w-[100%]">
+            <span className="bg-[var(--color-primary)] text-[var(--color-black)] uppercase text-[12px] px-[15px] absolute  ">
+              Features{" "}
+            </span>
+          </div>
+          <ul className="mt-[40px] list-disc pl-[18px] ">
+            {project?.feature
+              ? project?.feature?.map((tech, index) => (
+                  <li
+                    key={index}
+                    className="text-[var(--body-color)] mb-[8px] uppercase text-[12px]"
+                  >
+                    {tech}
+                  </li>
+                ))
+              : ["Reactjs", "NodeJs", "Redux", "MongoDB"].map((tech, index) => (
+                  <li
+                    key={index}
+                    className="text-[var(--body-color)] mb-[8px] uppercase text-[12px]"
+                  >
+                    {tech}
+                  </li>
+                ))}{" "}
+            {/* <span className="text-[var(--body-color)] uppercase text-[12px]"> Reactjs </span> */}
+          </ul>
         </div>
-        <div className=" ">
+
+        <div className="hidden lg:block">
+          <Video videoId={project?.videoId} show={true} link={project?.link} />
+        </div>
+        {/* <div className=" ">
           <div className="w-[100%] p-[20px] bg-[var(--bg-color)] h-[350px]">
             <video
               src={`http://localhost:8080/api/v1/video/get-video/${project?.videoId}`}
               className="w-[100%] object-cover h-[100%]"
               controls
             >
-              {/* <source src={`http://localhost:3000/${video.filePath}`} type="video/mp4" /> */}
             </video>
           </div>
           <a
@@ -155,7 +190,7 @@ const Project = ({ params }: { params: { id: string } }) => {
           >
             <FaArrowRight />
           </a>
-        </div>
+        </div> */}
       </div>
 
       <div className="bg-[#e3e3e329] mt-[45px] h-[1px] w-[100%]"></div>

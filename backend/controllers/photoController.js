@@ -5,6 +5,7 @@ import fs from 'fs';
 export const addPhotoController = async (req, res) => {
   try {
     const  photo  = req.file;
+    console.log("photo", photo)
     if (!photo) {
       return res.status(400).json({
         success: false,
@@ -20,7 +21,7 @@ export const addPhotoController = async (req, res) => {
       success: true,
       error: false,
       message: "New photo is added",
-      data: savedPhoto,
+      savedPhotoId: savedPhoto._id,
     });
 
   } catch (error) {

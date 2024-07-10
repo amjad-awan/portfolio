@@ -32,7 +32,7 @@ const GetInTouch = () => {
   }, []);
 
   return (
-    <div className="max-w-[1200px] mb-[100px] px-[20px] lg:px-[0px] gap-[20px] mx-auto grid  grid-cols-1 md:grid-cols-2 ">
+    <div id="contact" className="max-w-[1200px] mb-[100px] px-[20px] lg:px-[0px] gap-[20px] mx-auto grid  grid-cols-1 md:grid-cols-2 ">
       <div>
         <h2 className="font-[600] text-[var(--color-white)] font-primary text-[100px] md:text-[128px] leading-[60px] ">
           Design{" "}

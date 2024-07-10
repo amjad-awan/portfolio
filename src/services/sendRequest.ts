@@ -10,7 +10,6 @@ export const sendRequest = async (payload:any) => {
     const defaultHeaders = {
       'Content-Type': 'application/json'
     };
-
     const mergedHeaders = {
       ...defaultHeaders,
       ...headers

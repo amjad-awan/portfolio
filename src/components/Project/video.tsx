@@ -10,7 +10,7 @@ const Video = ({videoId,link}:any) => {
     <div>
     <div className="w-[100%] p-[20px] bg-[var(--bg-color)] mt-4 lg:mt-0 h-[350px]">
       <video
-        src={`http://localhost:8080/api/v1/video/get-video/${videoId}`}
+        src={`https://portfolio-backend-rouge-ten.vercel.app/api/v1/video/get-video/${videoId}`}
         className="w-[100%] object-cover h-[100%]"
         controls
       >

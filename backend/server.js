@@ -28,9 +28,7 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the uploads directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Define routes
-
 app.post("/api/v1/send-mail",nodeMailer );
-
 app.use("/api/v1/photo",photoRoute );
 app.use("/api/v1/video", videoRoute);
 app.use("/api/v1/project", projectRoute);

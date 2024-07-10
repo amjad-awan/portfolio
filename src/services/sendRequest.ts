@@ -1,6 +1,6 @@
 import axios from 'axios';
+const BASE_URL = 'http://localhost:8080/api/v1'
 
-const BASE_URL = 'http://localhost:8080/api/v1';
 
 export const sendRequest = async (payload:any) => {
   let response;
@@ -8,13 +8,12 @@ export const sendRequest = async (payload:any) => {
   try {
     // Set default headers
     const defaultHeaders = {
-      'Content-Type': 'application/json'
-    };
+      'Content-Type':'application/json'
+    }
     const mergedHeaders = {
       ...defaultHeaders,
       ...headers
-    };
-
+    }
     const requestOptions = {
       method,
       headers: mergedHeaders,

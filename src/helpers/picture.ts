@@ -1,3 +1,3 @@
 export const convertToPic=(id:string | undefined)=>{
-return `http://localhost:8080/api/v1/photo/get-photo/${id}`
+return `https://portfolio-backend-rouge-ten.vercel.app/api/v1/photo/get-photo/${id}`
 }

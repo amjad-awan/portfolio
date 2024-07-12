@@ -5,7 +5,7 @@ import AnimatedItem from "../common/AnimatedItem/AnimatedItem";
 
 const NewsLetter = () => {
   return (
-    <div className={`${styles["__news-letter"]}`}>
+    <div className={`${styles["__news-letter"]} mt-[100px]`}>
       <AnimatedItem
         el="h3"
         cls=" transition-all duration-500 z-[5] opacity-0 translate-y-[20px] text-[40px] font-[900] uppercase text-center text-[var(--color-white)] "

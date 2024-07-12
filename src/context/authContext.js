@@ -14,7 +14,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  console.log("user14", user)
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const isUser= JSON.parse(localStorage.getItem("user"))

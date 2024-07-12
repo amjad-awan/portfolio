@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import AnimatedItem from "../common/AnimatedItem/AnimatedItem";
 import SectionsHead from "../SectionsHead/SectionsHead";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
-import img from "../../../public/assets/images/blog1.jpg";
 import { FaCircleUser } from "react-icons/fa6";
 import { FaComments } from "react-icons/fa";
 import styles from "./style.module.scss";
@@ -21,9 +21,9 @@ interface BlogProps {
   comments: Array<any>;
 }
 const MyBlogs = ({ button }: any) => {
+  const router= useRouter()
   const [blogs, setBlogs] = useState<BlogProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-
   const allBlogs = async () => {
     try {
       const res = await getBlogs();
@@ -41,7 +41,7 @@ const MyBlogs = ({ button }: any) => {
   }, []);
 
   return (
-    <div id="blogs" className="max-w-[1200px] mb-[200px] px-[20px] lg:px-[0px] mx-auto ">
+    <div id="blogs" className="max-w-[1200px] mb-[200px] pt-[100px] px-[20px] lg:px-[0px] mx-auto ">
       <div className="flex gap-[40px] flex-col md:flex-row items-end ">
         <div className="max-w-[800px]">
           <SectionsHead
@@ -53,12 +53,13 @@ const MyBlogs = ({ button }: any) => {
           />
         </div>
         {button && (
-          <button
-            type="button"
+           <button onClick={()=>router.push("/blogs")}
+            // type="button"
             className="  md:ml-auto Button w-[200px] transition-all duration-300 hover:bg-[--black3] hover:text-[var(--color-white)] text-[14px] inline-flex  text-[var(--color-black)] px-[20px] font-[600] py-[15px]  bg-[var(--color-primary)]"
           >
             More Blog +
           </button>
+         
         )}
       </div>
 

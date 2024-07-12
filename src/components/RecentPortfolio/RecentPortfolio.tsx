@@ -102,7 +102,6 @@ useEffect(()=>{
           type="button"
           className=" mt-[30px]  md:ml-auto Button w-[200px] transition-all duration-300 hover:bg-[--black3] hover:text-[var(--color-white)] text-[14px] inline-flex  text-[var(--color-black)] px-[20px] font-[600] py-[15px]  bg-[var(--color-primary)]"
         >
-         
           More Projects +
         </button>
         </Link>

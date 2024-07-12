@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import SectionsHead from "../SectionsHead/SectionsHead";
 import CvButton from "../CvButton/CvButton";
-import img from "../../../public/assets/images/about_img.jpg";
+import img from "../../../public/assets/images/about-me.png";
 import styles from "./style.module.scss";
 import { isInViewPort } from "@/helpers/isInViewPort";
 import { FaCodiepie } from "react-icons/fa";
@@ -36,10 +36,7 @@ const AboutMe = () => {
           <div className="w-[200px] md:mt-[5px] h-[2px] bg-[var(--body-color)] "></div>
           <div className="">
             <p className="text-[16px] text-left m-0  pb-[80px] font-[400] leading-[28px] text-[var(--body-color)]">
-              Nemo design enim ipsam voluptatem quim voluptas sit aspernatur aut
-              odit auting fugit sed thisnquia consequuntur magni dolores eos
-              designer heresm qui ratione
-            </p>
+            As a creative coder and skilled full-stack web developer, I specialize in seamlessly integrating innovative design with cutting-edge technology. With expertise in React.js, Next.js, and Node.js, I have crafted robust, scalable applications that deliver exceptional and intuitive user experiences. <span className="bg-[var(--color-primary)] text-[var(--color-black)]">My journey includes working on diverse projects, such as an NFT app that generated over $3.5M in revenue and actively contributing to an AI responses app utilized by Toyota Japan </span>. I am passionate about bringing ideas to life through code and constantly strive to push the boundaries of what's possible in web development.            </p>
             <CvButton />
           </div>
         </div>
@@ -48,7 +45,7 @@ const AboutMe = () => {
       <div className="flex justify-center md:justify-end">
         <AnimatedItem
           el="div"
-          cls={`${styles["__image-wrapper"]} w-[365px] h-[475px] md:mt-[5px] bg-[var(--body-color)]`}
+          cls={`${styles["__image-wrapper"]} w-[365px] h-[475px] md:mt-[5px]`}
         >
           <>
             <img

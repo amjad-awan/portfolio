@@ -12,7 +12,6 @@ import { usePathname } from "next/navigation";
 
 const NavBar = () => {
   const pathName = usePathname();
-  console.log("pathName", pathName);
 
   const [showDrawer, setShowDrawer] = useState(true);
 

@@ -121,14 +121,14 @@ const BlogContent = ({ params }: { params: { id: string | undefined } }) => {
         <div className="bg-[#e3e3e329] mt-[45px] h-[1px] w-[100%]"></div>
 
         {blog?.comments?.map((comment, index) => {
+          console.log("comment",comment)
           return (
             <div className=" relative bg-[var(--bg-color)] mt-[100px] p-[40px] ">
-              <div className="h-[100px] w-[100px] rounded-full overflow-hidden absolute top-[-50px] right-[40px]">
-                <img
-                  src="/assets/images/1.jpg"
-                  className="object-contain h-[100%] w-[100%]"
-                />
-              </div>
+              {/* <div className="h-[100px] uppercase text-[var(--color-white)] flex font-[600] justify-center items-center bg-[var(--black3)] w-[100px] rounded-full overflow-hidden absolute top-[-50px] right-[40px]">
+               {
+                comment?.username?.charAt(0)
+               }
+              </div> */}
               <div>
                 <h3 className="text-[20px]  text-[var(--color-white)] font-[600] font-primary leading-[26px] ">
                   {comment?.username}

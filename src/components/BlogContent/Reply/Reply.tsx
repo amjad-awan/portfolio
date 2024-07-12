@@ -100,7 +100,7 @@ const Reply = ({ blogId, replies, commentId, setBlog }: any) => {
       {replies?.map((reply:any, index:any) => {
         return (
           <div className=" relative ml-[30px] mb-[50px] px-[10px] py-[20px] bg-[#151c25]">
-            <div className="absolute text-center uppercase leading-[30px] text-[#fff] top-[-15px] right-2 w-[50px] border-[1px] border-[#dbd9d97c] h-[30px] rounded-full bg-[#151c25] ">{reply.username.charAt(0)}</div>
+            <div className="absolute text-center uppercase leading-[30px] text-[#fff] top-[-25px] right-2 w-[40px] border-[1px] flex justify-center items-center border-[#dbd9d97c] h-[40px] rounded-full bg-[#151c25] ">{reply.username.charAt(0)}</div>
             <p className="text-[#fff] text-[16px]">{reply.comment}</p>
           </div>
         );

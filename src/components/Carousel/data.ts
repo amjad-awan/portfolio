@@ -2,6 +2,24 @@
 export const reviews = [
   {
     id: 1,
+    name: "Ami",
+    role: "From Upwork",
+    rating: 5,
+    text: "Muhammad completed the work quickly, accurately, and professionally. He made the change I requested without any problems. I have no doubt that I will work with Muhammad many more times. I highly recommend him, Ami",
+    img: "/assets/images/slider1.jpg",
+
+  },
+  {
+    id: 2,
+    name: "Josh Greenberg",
+    role: "From Upwork",
+    rating: 5,
+    text: "Muhammad was very responsive and worked hard to complete the task. I felt he showcased his skills effectively and he was comfortable communicating and seeking clarity to ensure he understood the requirements",
+    img: "",
+
+  },
+  {
+    id: 2,
     name: "Sarah Johnson",
     role: "Project Manager at TechCorp",
     rating: 5,
@@ -14,7 +32,7 @@ export const reviews = [
     role: "CTO at InnovateX",
     rating: 5,
     text: "Amjad is a highly skilled full-stack developer who brings creativity and problem-solving skills to every project. His ability to work across the entire stack ensured our project was a success.",
-    img: "/assets/images/1.jpg",
+    img: "",
   },
   {
     id: 3,
@@ -22,7 +40,7 @@ export const reviews = [
     role: "Product Owner at Creative Solutions",
     rating: 4,
     text: "Amjad's attention to detail and dedication to delivering a perfect product resulted in a flawless user experience for our app. His ability to meet tight deadlines was greatly appreciated.",
-    img: "/assets/images/1.jpg",
+    img: "",
   },
   {
     id: 4,
@@ -30,7 +48,7 @@ export const reviews = [
     role: "Senior Developer at CodeWorks",
     rating: 5,
     text: "Collaborating with Amjad was an excellent experience. His deep understanding of both front-end and back-end development allowed us to tackle complex features with ease.",
-    img: "/assets/images/1.jpg",
+    img: "",
   },
   {
     id: 5,
@@ -38,7 +56,7 @@ export const reviews = [
     role: "CEO at NextGen Tech",
     rating: 5,
     text: "Amjad’s skills in web development are top-notch. He transformed our outdated website into a modern, user-friendly platform that has greatly improved our customer engagement.",
-    img: "/assets/images/1.jpg",
+    img: "",
   },
   {
     id: 6,
@@ -46,7 +64,7 @@ export const reviews = [
     role: "Lead Designer at PixelPerfect",
     rating: 4,
     text: "Amjad is a fantastic developer to work with. His collaboration and integration of design and functionality made our project a huge success. His coding skills are exceptional.",
-    img: "/assets/images/1.jpg",
+    img: "",
   },
   {
     id: 7,
@@ -54,7 +72,7 @@ export const reviews = [
     role: "Tech Lead at DevSolutions",
     rating: 5,
     text: "Amjad’s comprehensive knowledge of both front-end and back-end development is impressive. He took our project to the next level with his innovative approach and expertise.",
-    img: "/assets/images/1.jpg",
+    img: "",
   },
   {
     id: 8,
@@ -62,6 +80,6 @@ export const reviews = [
     role: "Product Manager at SoftCorp",
     rating: 5,
     text: "Amjad is a dedicated and highly skilled developer. His contribution to our project was invaluable, and he always ensured that the quality was top-notch. Highly recommended!",
-    img: "/assets/images/1.jpg",
+    img: "",
   },
 ];

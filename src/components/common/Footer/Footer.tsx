@@ -1,4 +1,8 @@
 import React from "react";
+import { FaLinkedin } from "react-icons/fa";
+import { FaTwitterSquare } from "react-icons/fa";
+import { TbBrandFiverr } from "react-icons/tb";
+import { FaSquareUpwork } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -55,6 +59,8 @@ const Footer = () => {
           >
             03027543636{" "}
           </a>
+
+      
         </div>
         <div>
           <div className="bg-[var(--color-primary)] w-[100px] h-[100px] rounded-full flex justify-center items-center ">
@@ -82,6 +88,41 @@ const Footer = () => {
           >
             amjadmalikf53@gmail.com{" "}
           </a>
+
+          <div className="flex gap-[20px] mt-[30px] ">
+          <a
+            href="https://www.linkedin.com/in/amjad-mehmood-2bb417221/"
+            className="text-[var(--color-primary)] transition-all duration-500 hover:opacity-[.5]  hover:text-[var(--color-primary)] font-primary  text-[30px] font-[600] leading-[30px] block "
+          >
+            <FaLinkedin />
+
+          </a>
+          <a
+            href="https://www.upwork.com/freelancers/~01fe666696114ee1da?viewMode=1"
+            className="text-[var(--color-primary)] transition-all duration-500 hover:opacity-[.5]  hover:text-[var(--color-primary)] font-primary  text-[30px] font-[600] leading-[30px] block "
+          >
+            <FaSquareUpwork />
+
+          </a>
+          <a
+            href="https://www.fiverr.com/amjadwebgraphic?public_mode=true"
+            className="text-[var(--color-primary)] transition-all duration-500 hover:opacity-[.5]  hover:text-[var(--color-primary)] font-primary  text-[30px] font-[600] leading-[30px] block "
+          >
+            <TbBrandFiverr />
+
+          </a>
+
+          
+       
+          <a
+            href="https://www.linkedin.com/in/amjad-mehmood-2bb417221/"
+            className="text-[var(--color-primary)] hover:opacity-[.5] transition-all duration-500 hover:text-[var(--color-primary)] font-primary  text-[30px] font-[600] leading-[30px] block "
+          >
+            <FaTwitterSquare />
+
+          </a>
+         
+          </div>
         </div>
       </div>
       <div className="px-[20px] md:px-[0px] flex  flex-col md:flex-row justify-between items-start md:items-center max-w-[1200px] py-[30px] gap-[20px] mt-[70px] mx-auto border-t-[1px] border-[#fff1]">
@@ -90,7 +131,7 @@ const Footer = () => {
         </p>
         <ul className="flex gap-[20px] ">
           <li className="text-[var(--body-color)]  opacity-[.5] transition-all hover:opacity-[1]  duration-500 hover:text-[var(--color-primary)] ">
-            <a href="">Trams & Condition</a>
+            <a href="">Terms & Condition</a>
           </li>
           <li className="text-[var(--body-color)]  opacity-[.5] transition-all duration-500 hover:opacity-[1]  hover:text-[var(--color-primary)] ">
             <a href="">Privacy Policy</a>

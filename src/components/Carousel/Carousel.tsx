@@ -61,11 +61,21 @@ const Carousel: React.FC = () => {
               key={review.id}
               className="relative p-[20px] pr-[90px] w-[100%] border-[1px] border-[var(--gray4-color)]"
             >
-              <div className="h-[100px] z-[9999] w-[100px] rounded-full overflow-hidden absolute top-[-50px] right-[30px]">
-                <img
-                  src={review.img}
-                  className="object-contain h-[100%] w-[100%]"
-                />
+              <div className="h-[100px] text-[var(--color-white)] flex font-[600] justify-center items-center bg-[var(--black3)] z-[9999] w-[100px] rounded-full overflow-hidden absolute top-[-50px] right-[30px]">
+               {
+                review?.img ? <img src={review?.img}
+                className="object-cover h-[100%] w-[100%]"
+              />:  (() => {
+                const nameParts = review?.name.split(' ');
+                if (nameParts.length >= 2) {
+                  const firstName = nameParts[0].charAt(0);
+                  const lastName = nameParts[1].slice(0, 1);
+                  return `${firstName}${lastName}`.toUpperCase();
+                } else {
+                  return review?.name.charAt(0).toUpperCase();
+                }
+              })()
+               } 
               </div>
               <Rating rating={review.rating} />
               <h3 className="text-[22px] mt-[17px] mb-[5px] font-primary text-[var(--color-white)] font-[500]">

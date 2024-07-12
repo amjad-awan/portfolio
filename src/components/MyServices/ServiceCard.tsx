@@ -18,7 +18,7 @@ const ServiceCard = ({ svg, index, title, description }: ServiceType) => {
     >
    
         {svg}
-        <h3 className="text-[20px] mt-[20px] mb-[12px] text-[var(--color-white)] font-[500] leading-[1px] uppercase">
+        <h3 className="text-[20px] text-center mt-[20px] mb-[12px] text-[var(--color-white)] font-[500]  uppercase">
           {title}
         </h3>
         <p className="text-[16px] text-center mt-[22px] px-[44px] pb-[44px] font-[500] leading-[28px] text-[var(--body-color)]">

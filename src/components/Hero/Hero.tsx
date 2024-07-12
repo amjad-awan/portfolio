@@ -4,11 +4,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import CvButton from "../CvButton/CvButton";
 import { FaPlay } from "react-icons/fa";
-import img from "../../../public/assets/images/banner_img_1.png";
+import img from "../../../public/assets/images/hero-banner.png";
 const Hero = () => {
   const [index, setIndex] = useState<number>(0);
   const text = ["Coder", "Developer", "Designer"];
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIndex((prev) => (prev >= text.length - 1 ? 0 : prev + 1));
@@ -42,7 +41,7 @@ const Hero = () => {
         <div className=" flex-col flex md:flex-row  mg:items-center md:max-w-fit gap-[30px] ">
           <CvButton />
 
-          <div className=" cursor-pointer flex md:justify-center items-center  gap-[20px] ">
+         <div className=" cursor-pointer flex md:justify-center items-center  gap-[20px] ">
             <div className=" cursor-pointer flex justify-center items-center bg-[var(--color-primary)] w-[40px] h-[40px] rounded-full ">
               <FaPlay />
             </div>
@@ -53,6 +52,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
       <div className="flex justify-center items-center col-span-3 md:col-span-1 ">
         <div className={`${styles["dev-img"]}`}>
         <img src={img.src} alt="Amjad"  />

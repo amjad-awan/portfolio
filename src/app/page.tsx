@@ -24,10 +24,9 @@ export default function  Home() {
       <GetInTouch />
       <EducationAndSkills />
       <RecentPortfolio  />
+      <MyBlogs button={true} />
       <Carousel />
       <Marquee />
-      <MyBlogs button={true} />
-   
     </main>
   );
 }

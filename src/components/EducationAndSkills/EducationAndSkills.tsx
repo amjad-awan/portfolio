@@ -14,59 +14,30 @@ const EducationAndSkills = () => {
           amplifying your impact"
         />
       </div>
-      <div className="max-w-[1200px] w-[100%] px-[20px] lg:px-[0px]   mx-auto  gap-x-[20px]  grid gap-y-[50px] mt-[100px] sm:grid-cols-1 md:grid-cols-2 ">
+      <div className="max-w-[1200px] mb-[100px] w-[100%] px-[20px] lg:px-[0px]   mx-auto  gap-x-[20px]  grid gap-y-[50px] mt-[100px] sm:grid-cols-1 md:grid-cols-2 ">
         <div>
           <div className=" text-[var(--color-primary)] font-primary text-[18px] font-[400] inline-block  border-[1px] border-[var(--color-primary)] py-[10px] px-[20px] text-center ">
-            2014 - 2018
+            2016 - 2018
           </div>
           <h3 className="text-[30px]  font-[600] text-[var(--color-white)] mt-[20px] mb-[10px] ">
-            Wordpress and End Developer
+          FSc-Pre Engineering (Faculty of Science)
           </h3>
           <p className="text-[16px]  font-[500] text-[var(--body-color)] font-primary mb-[10px] ">
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-            fugit sed thisnquia consequuntur magni dolores eos qui ratione
-            voluptatem
-          </p>
+          I completed my FSc from a reputed college in my hometown, Chishtian, with a commendable score of 75%.          </p>
         </div>
         <div>
           <div className=" text-[var(--color-primary)] font-primary text-[18px] font-[400] inline-block  border-[1px] border-[var(--color-primary)] py-[10px] px-[20px] text-center ">
-            2014 - 2018
+            2018 - 2022
           </div>
           <h3 className="text-[30px]  font-[600] text-[var(--color-white)] mt-[20px] mb-[10px] ">
-            Wordpress and End Developer
+         Bachelor in Computer-Sciences (BScs)
           </h3>
           <p className="text-[16px]  font-[500] text-[var(--body-color)] font-primary mb-[10px] ">
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-            fugit sed thisnquia consequuntur magni dolores eos qui ratione
-            voluptatem
+          I completed my Bachelor's degree in Computer Science from the Agriculture University Faisalabad.
+
           </p>
         </div>
-        <div>
-          <div className=" text-[var(--color-primary)] font-primary text-[18px] font-[400] inline-block  border-[1px] border-[var(--color-primary)] py-[10px] px-[20px] text-center ">
-            2014 - 2018
-          </div>
-          <h3 className="text-[30px]  font-[600] text-[var(--color-white)] mt-[20px] mb-[10px] ">
-            Wordpress and End Developer
-          </h3>
-          <p className="text-[16px]  font-[500] text-[var(--body-color)] font-primary mb-[10px] ">
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-            fugit sed thisnquia consequuntur magni dolores eos qui ratione
-            voluptatem
-          </p>
-        </div>
-        <div>
-          <div className=" text-[var(--color-primary)] font-primary text-[18px] font-[400] inline-block  border-[1px] border-[var(--color-primary)] py-[10px] px-[20px] text-center ">
-            2014 - 2018
-          </div>
-          <h3 className="text-[30px]  font-[600] text-[var(--color-white)] mt-[20px] mb-[10px] ">
-            Wordpress and End Developer
-          </h3>
-          <p className="text-[16px]  font-[500] text-[var(--body-color)] font-primary mb-[10px] ">
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-            fugit sed thisnquia consequuntur magni dolores eos qui ratione
-            voluptatem
-          </p>
-        </div>
+    
       </div>
 
       <Skills/>

@@ -42,14 +42,12 @@ const GetInTouch = () => {
           </span>{" "}
         </h2>
         <p className="font-[400] font-primary mt-[40px] mb-[20px] text-[16px] text-[var(--body-color)] ">
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-          auting fugit sed thisnquia consequuntur magni dolores eos designer
-          heresm qui ratione voluptatem sequi nesciuNeque porro quisquam est,
-          oursqui dolorem ipsum quia dolor sit amet consectetur, adipisci velit,
-          sed quia non numquam
+        In today's fast-paced digital world, design and innovation are more crucial than ever. The fusion of creative design and cutting-edge technology not only drives progress but also shapes our everyday experiences. Good design is not just about aesthetics; it's about creating functional, intuitive, and user-friendly interfaces that enhance user experience and engagement.
+        <br></br> Innovation, on the other hand, pushes boundaries, challenges the status quo, and opens up new possibilities. Together, design and innovation transform ideas into reality, fostering growth and driving success in the digital era.
+
         </p>
 
-        <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 ">
+        <div className="grid grid-cols-1 mt-[50px] gap-[20px] md:grid-cols-2 ">
           <div className=" flex flex-col justify-center items-center gap-[20px] bg-[var(--bg-color)] p-[40px]">
             <svg
               width="75"

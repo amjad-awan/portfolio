@@ -10,7 +10,7 @@ const Marquee  = ()  => {
     "* Development",
     "* JavaScript",
     "* React",
-    "* Node.js"
+    "* Nodejs"
   ];
 
   return (

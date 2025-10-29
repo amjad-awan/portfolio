@@ -52,6 +52,7 @@ const MyBlogs = ({ button }: any) => {
         personal brand"
           />
         </div>
+      
         {button && (
            <button onClick={()=>router.push("/blogs")}
             // type="button"
@@ -112,7 +113,7 @@ const MyBlogs = ({ button }: any) => {
                 </>
               </Link>
             </AnimatedItem>
-          );
+          )
         })}
       </div>
     </div>

@@ -15,7 +15,7 @@ interface PortfolioCardProps {
   import { convertToPic } from "@/helpers/picture";
 
 const Card: React.FC<PortfolioCardProps> = ({title,_id, photoId,type, cardSpan, cardHeight }) => (
-    <Link href={`/project/${_id}`} className={`${styles["__sec-wrapper"]} ${cardSpan && cardSpan} h-[${cardHeight}px]`}>
+    <Link href={`/project/${_id}`} className={`${styles["__sec-wrapper"]} ${cardSpan && cardSpan} h-[${cardHeight}]`}>
         <img src={convertToPic(photoId)} className="h-[100%] w-[100%] object-cover" alt={title} />
         <div className={`${styles["__slide"]} z-[1] flex flex-col px-[20px] py-[20px] gap-[10px]`}>
           <h4 className="text-[#fff]">{title}</h4>

@@ -10,9 +10,8 @@ import AuthModal from "../AuthModal/AuthModal";
 import { useAuth } from "@/context/authContext";
 
 const Layout = ({ children }) => {
-  const { login, user,setShowModal } = useAuth();
+  const {  user,setShowModal } = useAuth();
 
-  console.log("user",user)
 
   return (
     <div className="relative">

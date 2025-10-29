@@ -65,7 +65,7 @@ const [isLoading, setIsLoading]= useState(true)
 
 const getPortfolio=async ()=>{
   try {
-   const res= await getProjects(10) 
+   const res= await getProjects(6) 
    if(res && res.data){
     setPortfolio(res.data)
    }

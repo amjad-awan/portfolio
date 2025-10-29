@@ -138,6 +138,50 @@ const cards = [
     description:
       "Build robust and efficient server-side applications that power your web and mobile solutions.",
   },
+
+    {
+    title: "React Native Development",
+    svg: (
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="translate-y-[-47px] svg w-100 replaced-svg"
+      >
+        <circle cx="50" cy="50" r="10" fill="#55E6A5" />
+        <ellipse
+          cx="50"
+          cy="50"
+          rx="40"
+          ry="15"
+          stroke="#55E6A5"
+          strokeWidth="3"
+        />
+        <ellipse
+          cx="50"
+          cy="50"
+          rx="40"
+          ry="15"
+          stroke="#55E6A5"
+          strokeWidth="3"
+          transform="rotate(60 50 50)"
+        />
+        <ellipse
+          cx="50"
+          cy="50"
+          rx="40"
+          ry="15"
+          stroke="#55E6A5"
+          strokeWidth="3"
+          transform="rotate(-60 50 50)"
+        />
+      </svg>
+    ),
+    description:
+      "Build cross-platform mobile applications using React Native with seamless performance and native-like experience.",
+  },
 ];
 
 const MyServices = () => {

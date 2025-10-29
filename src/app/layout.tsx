@@ -8,7 +8,6 @@ import Layout from "../components/common/Layout/Layout";
 import { ToastContainer } from "react-toastify";
 import AuthProvider from "@/context/authContext";
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Full-stack developer",
   description: "Portfolio of a full-stack developer",
@@ -16,7 +15,6 @@ export const metadata: Metadata = {
     icon: "/Images/logo2.svg", // ✅ path to favicon
   },
 };
-
 export default function RootLayout({
   children,
 }: {

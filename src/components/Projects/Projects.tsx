@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import SectionsHead from "../SectionsHead/SectionsHead";
 import imgp from "../../../public/assets/images/discount-shopping-season-with-sale.jpg";
 import img2 from "../../../public/assets/images/dating-app-interface-design_23-2148525704.jpg";
@@ -16,27 +16,24 @@ interface PortfolioItem {
 }
 
 const Projects = () => {
+  const [portfolio, setPortfolio] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [ portfolio, setPortfolio]= useState([])
-  const [isLoading, setIsLoading]= useState(true)
-  
-
-  const getPortfolio=async ()=>{
+  const getPortfolio = async () => {
     try {
-     const res= await getProjects(6) 
-     if(res && res.data){
-      setPortfolio(res.data)
-     }
+      const res = await getProjects(20);
+      if (res && res.data) {
+        setPortfolio(res.data);
+      }
     } catch (error) {
-      
-    }finally{
-      setIsLoading(false)
+    } finally {
+      setIsLoading(false);
     }
-  }
-  
-  useEffect(()=>{
-    getPortfolio()
-  },[])
+  };
+
+  useEffect(() => {
+    getPortfolio();
+  }, []);
 
   return (
     <div className="max-w-[1200px] mb-[100px] pt-[90px] px-[20px] lg:px-[0px] mx-auto ">
@@ -54,10 +51,10 @@ const Projects = () => {
         </div>
       )}
       <div className="lg:px-[0px] gap-[15px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {portfolio?.map((item:any, idx:any) => {
-         const {cardSpan, ...other}=item
-         return  <Card key={idx} {...other} cardHeight="400" />
-})}
+        {portfolio?.map((item: any, idx: any) => {
+          const { cardSpan, ...other } = item;
+          return <Card key={idx} {...other} cardHeight="400px" />;
+        })}
       </div>
     </div>
   );

@@ -62,11 +62,10 @@ const portfolioItems: PortfolioItem[] = [
 const RecentPortfolio: React.FC = () => {
 const [ portfolio, setPortfolio]= useState([])
 const [isLoading, setIsLoading]= useState(true)
-console.log("portfolio", portfolio)
 
 const getPortfolio=async ()=>{
   try {
-   const res= await getProjects(6) 
+   const res= await getProjects(10) 
    if(res && res.data){
     setPortfolio(res.data)
    }

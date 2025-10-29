@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SectionsHead from "../SectionsHead/SectionsHead";
 import CvButton from "../CvButton/CvButton";
 import img from "../../../public/assets/images/about-me.png";
@@ -11,6 +11,8 @@ import { RiPieChart2Fill } from "react-icons/ri";
 import AnimatedItem from "../common/AnimatedItem/AnimatedItem";
 const AboutMe = () => {
   const cardRef = useRef<HTMLDivElement>(null);
+
+
 
   useEffect(() => {
     const unobserve = isInViewPort({
@@ -42,6 +44,7 @@ const AboutMe = () => {
         </div>
       </div>
 
+
       <div className="flex justify-center md:justify-end">
         <AnimatedItem
           el="div"
@@ -60,11 +63,9 @@ const AboutMe = () => {
 
               <div className="flex flex-col">
                 <h4 className=" font-[500] text-[16px] font-primary text-[var(--color-white)] leading-[1.2] ">
-                  {" "}
                   Daily activity{" "}
                 </h4>
                 <p className="text-[16px] font-[400] leading-[1.7] text-[var(--body-color)]">
-                  {" "}
                   Explore now{" "}
                 </p>
               </div>
